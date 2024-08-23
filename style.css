@@ -1,0 +1,259 @@
+:root {
+    --color-bg: #1E201E;
+    --color-navbar: #3C3D37;
+    --color-text: #ECDFCC;
+    --color-header: #697565;
+    --color-button-bg: #3C3D37;
+    --color-button-text: #ECDFCC;
+    --color-hover: #697565;
+    --color-border: #ECDFCC;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--color-bg);
+    font-family: "DM Serif Text", serif;
+    color: var(--color-text);
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+.header {
+    background-color: var(--color-navbar);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.logo-text {
+    color: var(--color-header);
+    font-weight: 900;
+    font-size: 50px;
+}
+
+.add-book {
+    background-color: var(--color-header);
+    color: var(--color-button-text);
+    height: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.add-book:hover {
+    background-color: var(--color-hover);
+    border-color: var(--color-navbar);
+    color: var(--color-text);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--color-bg);
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid var(--color-border);
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close-btn {
+    color: var(--color-text);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--color-hover);
+}
+
+.submit-btn {
+    background-color: var(--color-header);
+    color: var(--color-button-text);
+    padding: 10px 20px;
+    border: 2px solid var(--color-border);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--color-hover);
+    border-color: var(--color-navbar);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: block;
+    color: var(--color-text);
+}
+
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid var(--color-border);
+    border-radius: 3px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+main {
+    padding: 40px;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 50px;
+}
+
+.card {
+    background: linear-gradient(135deg, #1E201E, #3C3D37);
+    border: 2px solid var(--color-border);
+    border-radius: 5px;
+    padding: 20px;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.2); /* Outer glow effect */
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.book-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-header);
+}
+
+.author, .pages {
+    font-size: 16px;
+    color: var(--color-text);
+}
+
+.toggle-read {
+    background-color: var(--color-header);
+    color: var(--color-button-text);
+    border: none;
+    border-radius: 3px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle-read:hover {
+    background-color: var(--color-hover);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.remove-btn {
+    background-color: #D64933;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #c12a1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .logo-text {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .add-book {
+        margin-top: 10px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: none;
+    }
+
+    form {
+        gap: 8px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 500px;
+    }
+}
